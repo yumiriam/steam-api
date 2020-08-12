@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+
+        <title>Steam 4 Linux - {% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous">
+
+        <!-- Bootstrap Table -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
+
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    </head>
+
+  <body>
+      <!-- Content -->
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Steam 4 Linux</a>
+        </nav>
+      </header>
+
+      <main class="container" role="main">
+      {% block content %}{% endblock %}
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+            <center>&copy; <span id="year"></span></center>
+        </div>
+      </footer>
+
+      <!-- Custom -->
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $('span#year').text((new Date()).getFullYear());
+          });
+      </script>
+
+  </body>
+
+</html>

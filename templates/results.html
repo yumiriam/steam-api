@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if rsp.username %}
+    <h1>Hello, {{ rsp.username }}!</h1>
+    {% endif %}
+
+    {% if rsp.game_list %}
+    <p>Here are your Steam games for Linux:</p>
+
+    <table data-toggle="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th><div class="th-inner sortable">Name</div></th>
+                <th><div class="th-inner sortable">Linux</div></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for game in rsp.game_list %}
+            <tr>
+                <td>
+                    <img class="thumbnail" src="{{ game.header_image }}" />
+                </td>
+                <td>
+                    <a href="https://store.steampowered.com/app/{{ game.steam_appid }}">{{ game.name }}</a>
+                </td>
+                <td>
+                {% if game.platforms.linux %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+{% endblock %}

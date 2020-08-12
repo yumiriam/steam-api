@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/search/" method="post" class="form">
+    <label for="username">Enter your Steam username:</label><br>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span
+                class="input-group-text" id="basic-addon3">https://steamcommunity.com/id/</span>
+        </div>
+        <input type="text" name="username" id="username"
+            class="form-control" aria-describedby="username" />
+        <div class="input-group-append">
+             <button class="btn btn-dark" type="submit"
+                 id="button-addon2">Search</button>
+        </div>
+    </div>
+    </form>
+{% endblock %}
